@@ -3,7 +3,7 @@
 	.text
 	.section	.rodata
 .LC0:
-	.string	"Enter X: %d"
+	.string	"%d"
 .LC1:
 	.string	"r"
 .LC2:
@@ -89,5 +89,5 @@ __x86.get_pc_thunk.bx:
 	.cfi_endproc
 .LFE7:
 	.hidden	__stack_chk_fail_local
-	.ident	"GCC: (Ubuntu 8.2.0-7ubuntu1) 8.2.0"
+	.ident	"GCC: (Ubuntu 8.3.0-6ubuntu1~18.10) 8.3.0"
 	.section	.note.GNU-stack,"",@progbits
