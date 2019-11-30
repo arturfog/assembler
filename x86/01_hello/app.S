@@ -27,11 +27,10 @@ main:
 // -----------------
 //	call get_input
 // -----------------
-/	call exploit
+	call exploit
 // -----------------
 	xor %eax, %eax
 	ret
-
 
 // print_num:
 // printf("%d \n", num)
@@ -78,9 +77,7 @@ get_input:
 	pop %ebp
 	ret
 
-arg_func:
-
 exploit:
 	push %ebp
-	pop %ebp	
+	pop %ebp
 	ret
