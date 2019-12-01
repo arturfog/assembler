@@ -16,11 +16,18 @@ input: .asciz "Please type number:"
 .global main
 main:
 	push {lr}
-	ldr %r0, =$greet
-	mov %r1, #5
+	ldr r0, =$greet
+	mov r1, #5
 	bl printf
 //--------------------
 	bl func1
+//--------------------
+	mov r0, #25
+	bl print_num
+//--------------------
+	bl write_int
+//--------------------
+	bl get_input
 //--------------------
 // exit
 	pop {lr}
@@ -28,31 +35,49 @@ main:
 
 func1:
 	push {lr}
-	ldr %r0, =$greet
+	ldr r0, =$greet
 	bl printf
 	pop {lr}
 	bx lr
 // print_num:
 // printf("%d \n", num)
 print_num:
-	push {lr]
+	push {fp,lr}
+	mov r1, r0
+	ldr r0, =$format
 	bl printf
-	pop {lr}
+	pop {fp,lr}
 	bx lr
 
 write_int:
-	push {lr]
-	pop {lr}
+	push {fp,lr}
+	mov r7, #4 // write
+	mov r0, #1 // stdout
+	ldr r1, =$greet
+	mov r2, #13
+	swi 0x0
+	pop {fp,lr}
 	bx lr
+
 // get_input
 // scanf("%d", local_var)
 get_input:
-	push {lr]
-	pop {lr}
-	ldr %r0, =$input
+	push {fp,lr}
+
+	ldr r0, =$input
 	bl printf
-	ldr %r0, =$format
+
+	sub sp, #4
+	mov r1, sp
+	ldr r0, =$num_format
+	bl scanf
+
+	ldr r0, =$format
+	ldr r1, [sp]
 	bl printf
+
+	add sp, #4
+	pop {fp,lr}
 	bx lr
 
 exploit:
