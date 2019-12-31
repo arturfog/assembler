@@ -1,0 +1,326 @@
+	.file	"main.cpp"
+	.text
+	.globl	main
+	.type	main, @function
+main:
+.LFB0:
+	.cfi_startproc
+	endbr64
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	movl	%edi, -36(%rbp)
+	movq	%rsi, -48(%rbp)
+#APP
+# 3 "main.cpp" 1
+	nop
+# 0 "" 2
+#NO_APP
+	movl	$123, -20(%rbp)
+	movl	$234, -16(%rbp)
+#APP
+# 6 "main.cpp" 1
+	nop
+# 0 "" 2
+#NO_APP
+	movb	$65, -22(%rbp)
+#APP
+# 8 "main.cpp" 1
+	nop
+# 0 "" 2
+#NO_APP
+	movss	.LC0(%rip), %xmm0
+	movss	%xmm0, -12(%rbp)
+#APP
+# 10 "main.cpp" 1
+	nop
+# 0 "" 2
+#NO_APP
+	movsd	.LC1(%rip), %xmm0
+	movsd	%xmm0, -8(%rbp)
+#APP
+# 12 "main.cpp" 1
+	nop
+# 0 "" 2
+#NO_APP
+	movb	$1, -21(%rbp)
+#APP
+# 14 "main.cpp" 1
+	nop
+# 0 "" 2
+#NO_APP
+	movl	$0, %eax
+	popq	%rbp
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE0:
+	.size	main, .-main
+	.globl	_Z8loopTestv
+	.type	_Z8loopTestv, @function
+_Z8loopTestv:
+.LFB1:
+	.cfi_startproc
+	endbr64
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	movl	$0, -8(%rbp)
+	movl	$0, -4(%rbp)
+.L5:
+	cmpl	$99, -4(%rbp)
+	jg	.L6
+	movl	-4(%rbp), %eax
+	addl	%eax, -8(%rbp)
+	addl	$1, -4(%rbp)
+	jmp	.L5
+.L6:
+	nop
+	popq	%rbp
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE1:
+	.size	_Z8loopTestv, .-_Z8loopTestv
+	.globl	_Z10structTestv
+	.type	_Z10structTestv, @function
+_Z10structTestv:
+.LFB2:
+	.cfi_startproc
+	endbr64
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	movl	$2, -8(%rbp)
+	movb	$66, -4(%rbp)
+	nop
+	popq	%rbp
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE2:
+	.size	_Z10structTestv, .-_Z10structTestv
+	.globl	_Z9arrayTestv
+	.type	_Z9arrayTestv, @function
+_Z9arrayTestv:
+.LFB3:
+	.cfi_startproc
+	endbr64
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	subq	$416, %rsp
+	movq	%fs:40, %rax
+	movq	%rax, -8(%rbp)
+	xorl	%eax, %eax
+#APP
+# 37 "main.cpp" 1
+	nop
+# 0 "" 2
+#NO_APP
+	movl	$10, -416(%rbp)
+#APP
+# 40 "main.cpp" 1
+	nop
+# 0 "" 2
+#NO_APP
+	nop
+	movq	-8(%rbp), %rax
+	xorq	%fs:40, %rax
+	je	.L9
+	call	__stack_chk_fail@PLT
+.L9:
+	leave
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE3:
+	.size	_Z9arrayTestv, .-_Z9arrayTestv
+	.globl	_Z11pointerTestv
+	.type	_Z11pointerTestv, @function
+_Z11pointerTestv:
+.LFB4:
+	.cfi_startproc
+	endbr64
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	subq	$32, %rsp
+	movq	%fs:40, %rax
+	movq	%rax, -8(%rbp)
+	xorl	%eax, %eax
+	movl	$123, -20(%rbp)
+#APP
+# 45 "main.cpp" 1
+	nop
+# 0 "" 2
+#NO_APP
+	leaq	-20(%rbp), %rax
+	movq	%rax, -16(%rbp)
+#APP
+# 47 "main.cpp" 1
+	nop
+# 0 "" 2
+#NO_APP
+	movq	-16(%rbp), %rax
+	movl	$234, (%rax)
+	nop
+	movq	-8(%rbp), %rax
+	xorq	%fs:40, %rax
+	je	.L11
+	call	__stack_chk_fail@PLT
+.L11:
+	leave
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE4:
+	.size	_Z11pointerTestv, .-_Z11pointerTestv
+	.align 2
+	.type	_ZZ9classTestvEN2TCC2Ev, @function
+_ZZ9classTestvEN2TCC2Ev:
+.LFB7:
+	.cfi_startproc
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	movq	%rdi, -8(%rbp)
+	nop
+	popq	%rbp
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE7:
+	.size	_ZZ9classTestvEN2TCC2Ev, .-_ZZ9classTestvEN2TCC2Ev
+	.set	_ZZ9classTestvEN2TCC1Ev,_ZZ9classTestvEN2TCC2Ev
+	.align 2
+	.type	_ZZ9classTestvEN2TCD2Ev, @function
+_ZZ9classTestvEN2TCD2Ev:
+.LFB10:
+	.cfi_startproc
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	movq	%rdi, -8(%rbp)
+	nop
+	popq	%rbp
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE10:
+	.size	_ZZ9classTestvEN2TCD2Ev, .-_ZZ9classTestvEN2TCD2Ev
+	.set	_ZZ9classTestvEN2TCD1Ev,_ZZ9classTestvEN2TCD2Ev
+	.align 2
+	.type	_ZZ9classTestvEN2TC7setDataEi, @function
+_ZZ9classTestvEN2TC7setDataEi:
+.LFB12:
+	.cfi_startproc
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	movq	%rdi, -8(%rbp)
+	movl	%esi, -12(%rbp)
+	movq	-8(%rbp), %rax
+	movl	-12(%rbp), %edx
+	movl	%edx, (%rax)
+	nop
+	popq	%rbp
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE12:
+	.size	_ZZ9classTestvEN2TC7setDataEi, .-_ZZ9classTestvEN2TC7setDataEi
+	.globl	_Z9classTestv
+	.type	_Z9classTestv, @function
+_Z9classTestv:
+.LFB5:
+	.cfi_startproc
+	endbr64
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	subq	$16, %rsp
+	movq	%fs:40, %rax
+	movq	%rax, -8(%rbp)
+	xorl	%eax, %eax
+#APP
+# 64 "main.cpp" 1
+	nop
+# 0 "" 2
+#NO_APP
+	leaq	-12(%rbp), %rax
+	movq	%rax, %rdi
+	call	_ZZ9classTestvEN2TCC1Ev
+#APP
+# 66 "main.cpp" 1
+	nop
+# 0 "" 2
+#NO_APP
+	leaq	-12(%rbp), %rax
+	movl	$123, %esi
+	movq	%rax, %rdi
+	call	_ZZ9classTestvEN2TC7setDataEi
+#APP
+# 68 "main.cpp" 1
+	nop
+# 0 "" 2
+#NO_APP
+	leaq	-12(%rbp), %rax
+	movq	%rax, %rdi
+	call	_ZZ9classTestvEN2TCD1Ev
+	nop
+	movq	-8(%rbp), %rax
+	xorq	%fs:40, %rax
+	je	.L16
+	call	__stack_chk_fail@PLT
+.L16:
+	leave
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE5:
+	.size	_Z9classTestv, .-_Z9classTestv
+	.section	.rodata
+	.align 4
+.LC0:
+	.long	1056964608
+	.align 8
+.LC1:
+	.long	3264175145
+	.long	1074342133
+	.ident	"GCC: (Ubuntu 9.2.1-9ubuntu2) 9.2.1 20191008"
+	.section	.note.GNU-stack,"",@progbits
+	.section	.note.gnu.property,"a"
+	.align 8
+	.long	 1f - 0f
+	.long	 4f - 1f
+	.long	 5
+0:
+	.string	 "GNU"
+1:
+	.align 8
+	.long	 0xc0000002
+	.long	 3f - 2f
+2:
+	.long	 0x3
+3:
+	.align 8
+4:
