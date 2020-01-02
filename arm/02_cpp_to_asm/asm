@@ -1,0 +1,423 @@
+	.arch armv5t
+	.eabi_attribute 20, 1
+	.eabi_attribute 21, 1
+	.eabi_attribute 23, 3
+	.eabi_attribute 24, 1
+	.eabi_attribute 25, 1
+	.eabi_attribute 26, 2
+	.eabi_attribute 30, 6
+	.eabi_attribute 34, 0
+	.eabi_attribute 18, 4
+	.file	"main.cpp"
+	.text
+	.align	2
+	.global	main
+	.syntax unified
+	.arm
+	.fpu softvfp
+	.type	main, %function
+main:
+	.fnstart
+.LFB0:
+	@ args = 0, pretend = 0, frame = 32
+	@ frame_needed = 1, uses_anonymous_args = 0
+	@ link register save eliminated.
+	str	fp, [sp, #-4]!
+	add	fp, sp, #0
+	sub	sp, sp, #36
+	str	r0, [fp, #-32]
+	str	r1, [fp, #-36]
+	.syntax divided
+@ 3 "main.cpp" 1
+	nop
+@ 0 "" 2
+	.arm
+	.syntax unified
+	mov	r3, #123
+	str	r3, [fp, #-24]
+	mov	r3, #234
+	str	r3, [fp, #-20]
+	.syntax divided
+@ 6 "main.cpp" 1
+	nop
+@ 0 "" 2
+	.arm
+	.syntax unified
+	mov	r3, #65
+	strb	r3, [fp, #-26]
+	.syntax divided
+@ 8 "main.cpp" 1
+	nop
+@ 0 "" 2
+	.arm
+	.syntax unified
+	mov	r3, #1056964608
+	str	r3, [fp, #-16]	@ float
+	.syntax divided
+@ 10 "main.cpp" 1
+	nop
+@ 0 "" 2
+	.arm
+	.syntax unified
+	ldr	r2, .L3
+	ldr	r3, .L3+4
+	str	r2, [fp, #-12]
+	str	r3, [fp, #-8]
+	.syntax divided
+@ 12 "main.cpp" 1
+	nop
+@ 0 "" 2
+	.arm
+	.syntax unified
+	mov	r3, #1
+	strb	r3, [fp, #-25]
+	.syntax divided
+@ 14 "main.cpp" 1
+	nop
+@ 0 "" 2
+	.arm
+	.syntax unified
+	mov	r3, #0
+	mov	r0, r3
+	add	sp, fp, #0
+	@ sp needed
+	ldr	fp, [sp], #4
+	bx	lr
+.L4:
+	.align	2
+.L3:
+	.word	-1030792151
+	.word	1074342133
+	.cantunwind
+	.fnend
+	.size	main, .-main
+	.align	2
+	.global	_Z8loopTestv
+	.syntax unified
+	.arm
+	.fpu softvfp
+	.type	_Z8loopTestv, %function
+_Z8loopTestv:
+	.fnstart
+.LFB1:
+	@ args = 0, pretend = 0, frame = 8
+	@ frame_needed = 1, uses_anonymous_args = 0
+	@ link register save eliminated.
+	str	fp, [sp, #-4]!
+	add	fp, sp, #0
+	sub	sp, sp, #12
+	mov	r3, #0
+	str	r3, [fp, #-12]
+	mov	r3, #0
+	str	r3, [fp, #-8]
+.L7:
+	ldr	r3, [fp, #-8]
+	cmp	r3, #99
+	bgt	.L8
+	ldr	r2, [fp, #-12]
+	ldr	r3, [fp, #-8]
+	add	r3, r2, r3
+	str	r3, [fp, #-12]
+	ldr	r3, [fp, #-8]
+	add	r3, r3, #1
+	str	r3, [fp, #-8]
+	b	.L7
+.L8:
+	nop
+	add	sp, fp, #0
+	@ sp needed
+	ldr	fp, [sp], #4
+	bx	lr
+	.cantunwind
+	.fnend
+	.size	_Z8loopTestv, .-_Z8loopTestv
+	.align	2
+	.global	_Z10structTestv
+	.syntax unified
+	.arm
+	.fpu softvfp
+	.type	_Z10structTestv, %function
+_Z10structTestv:
+	.fnstart
+.LFB2:
+	@ args = 0, pretend = 0, frame = 8
+	@ frame_needed = 1, uses_anonymous_args = 0
+	@ link register save eliminated.
+	str	fp, [sp, #-4]!
+	add	fp, sp, #0
+	sub	sp, sp, #12
+	mov	r3, #2
+	str	r3, [fp, #-12]
+	mov	r3, #66
+	strb	r3, [fp, #-8]
+	nop
+	add	sp, fp, #0
+	@ sp needed
+	ldr	fp, [sp], #4
+	bx	lr
+	.cantunwind
+	.fnend
+	.size	_Z10structTestv, .-_Z10structTestv
+	.section	.rodata
+	.align	2
+.LC0:
+	.word	__stack_chk_guard
+	.text
+	.align	2
+	.global	_Z9arrayTestv
+	.syntax unified
+	.arm
+	.fpu softvfp
+	.type	_Z9arrayTestv, %function
+_Z9arrayTestv:
+	.fnstart
+.LFB3:
+	@ args = 0, pretend = 0, frame = 408
+	@ frame_needed = 1, uses_anonymous_args = 0
+	push	{fp, lr}
+	add	fp, sp, #4
+	sub	sp, sp, #408
+	ldr	r3, .L12
+	ldr	r3, [r3]
+	str	r3, [fp, #-8]
+	mov	r3,#0
+	.syntax divided
+@ 37 "main.cpp" 1
+	nop
+@ 0 "" 2
+	.arm
+	.syntax unified
+	mov	r3, #10
+	str	r3, [fp, #-408]
+	.syntax divided
+@ 40 "main.cpp" 1
+	nop
+@ 0 "" 2
+	.arm
+	.syntax unified
+	nop
+	ldr	r3, .L12
+	ldr	r2, [r3]
+	ldr	r3, [fp, #-8]
+	eors	r2, r3, r2
+	beq	.L11
+	bl	__stack_chk_fail
+.L11:
+	sub	sp, fp, #4
+	@ sp needed
+	pop	{fp, pc}
+.L13:
+	.align	2
+.L12:
+	.word	.LC0
+	.cantunwind
+	.fnend
+	.size	_Z9arrayTestv, .-_Z9arrayTestv
+	.section	.rodata
+	.align	2
+.LC1:
+	.word	__stack_chk_guard
+	.text
+	.align	2
+	.global	_Z11pointerTestv
+	.syntax unified
+	.arm
+	.fpu softvfp
+	.type	_Z11pointerTestv, %function
+_Z11pointerTestv:
+	.fnstart
+.LFB4:
+	@ args = 0, pretend = 0, frame = 16
+	@ frame_needed = 1, uses_anonymous_args = 0
+	push	{fp, lr}
+	add	fp, sp, #4
+	sub	sp, sp, #16
+	ldr	r3, .L16
+	ldr	r3, [r3]
+	str	r3, [fp, #-8]
+	mov	r3,#0
+	mov	r3, #123
+	str	r3, [fp, #-16]
+	.syntax divided
+@ 45 "main.cpp" 1
+	nop
+@ 0 "" 2
+	.arm
+	.syntax unified
+	sub	r3, fp, #16
+	str	r3, [fp, #-12]
+	.syntax divided
+@ 47 "main.cpp" 1
+	nop
+@ 0 "" 2
+	.arm
+	.syntax unified
+	ldr	r3, [fp, #-12]
+	mov	r2, #234
+	str	r2, [r3]
+	nop
+	ldr	r3, .L16
+	ldr	r2, [r3]
+	ldr	r3, [fp, #-8]
+	eors	r2, r3, r2
+	beq	.L15
+	bl	__stack_chk_fail
+.L15:
+	sub	sp, fp, #4
+	@ sp needed
+	pop	{fp, pc}
+.L17:
+	.align	2
+.L16:
+	.word	.LC1
+	.cantunwind
+	.fnend
+	.size	_Z11pointerTestv, .-_Z11pointerTestv
+	.align	2
+	.syntax unified
+	.arm
+	.fpu softvfp
+	.type	_ZZ9classTestvEN2TCC2Ev, %function
+_ZZ9classTestvEN2TCC2Ev:
+	.fnstart
+.LFB7:
+	@ args = 0, pretend = 0, frame = 8
+	@ frame_needed = 1, uses_anonymous_args = 0
+	@ link register save eliminated.
+	str	fp, [sp, #-4]!
+	add	fp, sp, #0
+	sub	sp, sp, #12
+	str	r0, [fp, #-8]
+	ldr	r3, [fp, #-8]
+	mov	r0, r3
+	add	sp, fp, #0
+	@ sp needed
+	ldr	fp, [sp], #4
+	bx	lr
+	.cantunwind
+	.fnend
+	.size	_ZZ9classTestvEN2TCC2Ev, .-_ZZ9classTestvEN2TCC2Ev
+	.set	_ZZ9classTestvEN2TCC1Ev,_ZZ9classTestvEN2TCC2Ev
+	.align	2
+	.syntax unified
+	.arm
+	.fpu softvfp
+	.type	_ZZ9classTestvEN2TCD2Ev, %function
+_ZZ9classTestvEN2TCD2Ev:
+	.fnstart
+.LFB10:
+	@ args = 0, pretend = 0, frame = 8
+	@ frame_needed = 1, uses_anonymous_args = 0
+	@ link register save eliminated.
+	str	fp, [sp, #-4]!
+	add	fp, sp, #0
+	sub	sp, sp, #12
+	str	r0, [fp, #-8]
+	ldr	r3, [fp, #-8]
+	mov	r0, r3
+	add	sp, fp, #0
+	@ sp needed
+	ldr	fp, [sp], #4
+	bx	lr
+	.cantunwind
+	.fnend
+	.size	_ZZ9classTestvEN2TCD2Ev, .-_ZZ9classTestvEN2TCD2Ev
+	.set	_ZZ9classTestvEN2TCD1Ev,_ZZ9classTestvEN2TCD2Ev
+	.align	2
+	.syntax unified
+	.arm
+	.fpu softvfp
+	.type	_ZZ9classTestvEN2TC7setDataEi, %function
+_ZZ9classTestvEN2TC7setDataEi:
+	.fnstart
+.LFB12:
+	@ args = 0, pretend = 0, frame = 8
+	@ frame_needed = 1, uses_anonymous_args = 0
+	@ link register save eliminated.
+	str	fp, [sp, #-4]!
+	add	fp, sp, #0
+	sub	sp, sp, #12
+	str	r0, [fp, #-8]
+	str	r1, [fp, #-12]
+	ldr	r3, [fp, #-8]
+	ldr	r2, [fp, #-12]
+	str	r2, [r3]
+	nop
+	add	sp, fp, #0
+	@ sp needed
+	ldr	fp, [sp], #4
+	bx	lr
+	.cantunwind
+	.fnend
+	.size	_ZZ9classTestvEN2TC7setDataEi, .-_ZZ9classTestvEN2TC7setDataEi
+	.section	.rodata
+	.align	2
+.LC2:
+	.word	__stack_chk_guard
+	.text
+	.align	2
+	.global	_Z9classTestv
+	.syntax unified
+	.arm
+	.fpu softvfp
+	.type	_Z9classTestv, %function
+_Z9classTestv:
+	.fnstart
+.LFB5:
+	@ args = 0, pretend = 0, frame = 8
+	@ frame_needed = 1, uses_anonymous_args = 0
+	push	{fp, lr}
+	add	fp, sp, #4
+	sub	sp, sp, #8
+	ldr	r3, .L25
+	ldr	r3, [r3]
+	str	r3, [fp, #-8]
+	mov	r3,#0
+	.syntax divided
+@ 64 "main.cpp" 1
+	nop
+@ 0 "" 2
+	.arm
+	.syntax unified
+	sub	r3, fp, #12
+	mov	r0, r3
+	bl	_ZZ9classTestvEN2TCC1Ev
+	.syntax divided
+@ 66 "main.cpp" 1
+	nop
+@ 0 "" 2
+	.arm
+	.syntax unified
+	sub	r3, fp, #12
+	mov	r1, #123
+	mov	r0, r3
+	bl	_ZZ9classTestvEN2TC7setDataEi
+	.syntax divided
+@ 68 "main.cpp" 1
+	nop
+@ 0 "" 2
+	.arm
+	.syntax unified
+	sub	r3, fp, #12
+	mov	r0, r3
+	bl	_ZZ9classTestvEN2TCD1Ev
+	nop
+	ldr	r3, .L25
+	ldr	r2, [r3]
+	ldr	r3, [fp, #-8]
+	eors	r2, r3, r2
+	beq	.L24
+	bl	__stack_chk_fail
+.L24:
+	sub	sp, fp, #4
+	@ sp needed
+	pop	{fp, pc}
+.L26:
+	.align	2
+.L25:
+	.word	.LC2
+	.cantunwind
+	.fnend
+	.size	_Z9classTestv, .-_Z9classTestv
+	.ident	"GCC: (Ubuntu 9.2.1-9ubuntu2) 9.2.1 20191008"
+	.section	.note.GNU-stack,"",%progbits
